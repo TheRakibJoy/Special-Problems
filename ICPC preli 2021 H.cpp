@@ -107,10 +107,10 @@ struct SQD
             for(int i=getl(rt); i<=r; i++)
             {
                 int ch=s[i]-'a';
-                cnt[lf][ch]--;
+                cnt[rt][ch]--;
                 s[i]=c;
                 ch=s[i]-'a';
-                cnt[lf][ch]++;
+                cnt[rt][ch]++;
             }
         }
     }
@@ -127,7 +127,7 @@ struct SQD
         for(int i=l; i<=min(r,getr(lf)); i++)
         {
             int ch=s[i]-'a';
-            ans[ch]+=cnt[lf][ch];
+            ans[ch]++;
         }
         if(lf!=rt)
         {
@@ -135,7 +135,7 @@ struct SQD
             for(int i=getl(rt); i<=r; i++)
             {
                 int ch=s[i]-'a';
-                ans[ch]+=cnt[lf][ch];
+                ans[ch]++;
             }
         }
         return ans;
